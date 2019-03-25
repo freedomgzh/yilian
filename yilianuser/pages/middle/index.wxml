@@ -1,0 +1,6 @@
+<view class="container" style="height:{{height/3}}px">
+<image  class='bg'  mode='widthFix' src='https://www.yilianmedicine.com/statics/images/5.png' bindload="onImageLoad"></image>
+<navigator target="miniProgram" open-type="navigate" app-id="{{BappId}}" path="{{path}}" extra-data="{{data}}" bindtap='' class="toJump" version="trial">
+    <image  src="https://www.yilianmedicine.com/statics/images/6.png"></image>
+</navigator>
+</view>

@@ -123,7 +123,7 @@
 }
 
 .cat-small-style.cat-num-3>.flex-grow-0 {
-    width: 33.333333%;
+    width: 50%;
 }
 
 .cat-small-style.cat-num-4>.flex-grow-0 {
@@ -131,15 +131,16 @@
 }
 
 .cat-small-style .cat-item .cat-icon {
-    width: 92rpx;
-    height: 92rpx;
+    width: 120rpx;
+    height: 120rpx;
 }
 
 .cat-small-style .cat-item .cat-name {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: wrap;
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
     padding: 0 10rpx;
+    font-size: 24rpx;
 }
 
 .advert {

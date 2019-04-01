@@ -7,7 +7,7 @@
         <view class="info-block flex-y-center flex-col">
           <view class="info-up yy">￥{{ total_price}}</view>
           <view class="info-bottom ">
-            <view class=" bold">累计积分</view>
+            <view class=" bold">积分</view>
 
             <!-- <view class=" bold">{{custom.menus.money.name}}</view> -->
             <!-- <view class="bottom">元</view> -->

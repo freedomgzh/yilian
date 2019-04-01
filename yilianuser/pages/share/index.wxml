@@ -9,7 +9,7 @@
                 </view>
                 <view class="info-block">
                     <view class="info-up info-blod">{{__user_info.nickname}}</view>
-                    <view class="info-bottom">{{custom.words.parent_name.name}}：{{__user_info.parent}}</view>
+                    <view class="info-bottom">{{custom.words.parent_name.name}}：{{parent}}</view>
                 </view>
             </view>
             <view class="info-content flex-row">

@@ -11,6 +11,7 @@ Page({
   },
   onLoad: function (e) {
     getApp().page.onLoad(this, e);
+
     this.setData({
       custom: getApp().core.getStorageSync(getApp().const.CUSTOM)
     });
@@ -26,7 +27,9 @@ Page({
     var e = this, t = getApp().core.getStorageSync(getApp().const.SHARE_SETTING), a = e.data.__user_info;
     e.setData({
       share_setting: t
-    }), a && 1 == a.is_distributor ? e.checkUser() : e.loadData();
+    }), e.checkUser()
+    // a && 1 == a.is_distributor ? e.checkUser() : e.loadData();
+    console.log(a)
   },
   checkUser: function () {
     var t = this;
@@ -62,11 +65,15 @@ Page({
       mask: !0
     }), getApp().request({
       url: getApp().api.share.index,
+      data:{
+        user_id: getApp().core.getStorageSync(getApp().const.USER_INFO).id,
+      },
       success: function (e) {
         if (0 == e.code) {
           if (e.data.share_setting) var t = e.data.share_setting; else t = e.data;
           getApp().core.setStorageSync(getApp().const.SHARE_SETTING, t), a.setData({
-            share_setting: t
+            share_setting: t,
+            parent:e.data.parent
           });
         }
       },

@@ -45,7 +45,7 @@ Page({
 */
   onShareAppMessage: function () {
     return {
-      title:"分享佣金",
+      title:"邀请",
       path: "/pages/middle/index?parent_id=" + getApp().getUser().id ,
       success: function (res) {
         

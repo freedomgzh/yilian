@@ -24,6 +24,7 @@ Page({
         }), a.childrenCat(o)), a.setData({
             store: e
         });
+        console.log(this.data.store)
     },
     onShow: function() {
         getApp().page.onShow(this), getApp().core.hideLoading(), -1 !== this.data.cat_style && this.loadData();

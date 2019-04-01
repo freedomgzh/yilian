@@ -22,11 +22,29 @@ Page({
     time_all: []
   },
   onLoad: function(t) {
-    getApp().page.onLoad(this, t), t.page_id || (t.page_id = -1), this.setData({
+  
+
+ 
+    getApp().page.onLoad(this, t), t.page_id || (t.page_id = -1), this.huoqulunbo(this), this.setData({
       options: t,
       user_id: getApp().getUser().id
-    }), this.loadData(t),this.duijie(t);
+    }), this.loadData(t),this.duijie(t)
     console.log(t)
+    console.log(this)
+
+  },
+  huoqulunbo:function(s){
+    wx.request({
+      url: getApp().api.default.navbar,
+      success: function (e) {
+              console.log(e)
+       e.data.data.navs[0].active =true
+        s.data._navbar = e.data.data
+              s.setData({
+                _navbar:e.data.data
+              })
+      }
+    });
   },
   duijie:function(t){
     var that =this

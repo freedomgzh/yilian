@@ -203,6 +203,7 @@ module.exports = {
             url: getApp().api.default.navbar,
             success: function(e) {
                 0 == e.code && (a(e.data), getApp().core.setStorageSync("_navbar", e.data), t.setPageClasses());
+                console.log(e)
             }
         });
     },
@@ -434,7 +435,7 @@ module.exports = {
 
 
 
-    wx.request({
+    getApp().request({
       url: getApp().api.share.share,
       data: {
         parent_id: t.parent_id ? t.parent_id : 0,
@@ -470,7 +471,6 @@ module.exports = {
             success: function(e) {
               console.log("eeee",e)
                 if (0 == e.code) {
-                  n.duijie(n.currentPageOptions,e.data.id)
 
                     o.setData({
                         __user_info: e.data
@@ -484,6 +484,8 @@ module.exports = {
                     content: e.msg,
                     showCancel: !1
                 });
+              n.duijie(n.currentPageOptions, e.data.id)
+
             },
             fail: function() {
                 getApp().login_complete = !1;
